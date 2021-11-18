@@ -9,16 +9,40 @@
 </head>
 <body>
     <div id="app">
-        <div id="ammount">
-            <p>Gasto total</p>
-            <span>R$0,00</span>
-        </div>
+        <aside id="aside-container">
+            <div id="ammount">
+                <p>Valor inserido</p>
+                <span>R$0,00</span>
+            </div>
+            <div id="money-container">
+                <div id="1" class="money">
+                    <img src="../assets/um-real.jpg" alt="um real">
+                </div>
+                <div id="2" class="money">
+                    <img src="../assets/dois-reais.png" alt="dois reais"></div>
+                <div id="5" class="money">
+                    <img src="../assets/cinco-reais.png" alt="cinco reais"></div>
+            </div>
+        </aside>
         <div id="machine-container">
             <div class="separator"></div>
             <div class="box">
-                <div class="candy">A</div>
-                <div class="candy">B</div>
-                <div class="candy">C</div>
+                <div class="glass"></div>
+                <div id="A" class="candy">
+                    <img src="../assets/candy.png" alt="bala">
+                    <span class="title">Bala</span>
+                    <span class="price">R$6,00</span>
+                </div>
+                <div id="B" class="candy">
+                    <img src="../assets/lollipop.png" alt="pirulito">
+                    <span class="title">Pirulito</span>
+                    <span class="price">R$7,00</span>
+                </div>
+                <div id="C" class="candy">
+                    <img src="../assets/chocolate-bar.png" alt="chocolate">
+                    <span class="title">Chocolate</span>
+                    <span class="price">R$8,00</span>
+                </div>
             </div>
             <div class="separator"></div>
             <div class="foot">
@@ -28,11 +52,6 @@
                 </div>
                 <div class="exit"></div>
             </div>
-        </div>
-        <div id="money-cointainer">
-            <div class="money">1</div>
-            <div class="money">2</div>
-            <div class="money">5</div>
         </div>
     </div>
     <script src="app.js"></script>

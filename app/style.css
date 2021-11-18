@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 * {
-    font-family: cursive;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
 }
 
 #app {
@@ -11,17 +17,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: palevioletred;
+    background-color: rgb(255, 200, 200);
     overflow: hidden;
 }
 
-#ammount {
-    font-size: 2rem;
-    font-weight: bold;
-    position: fixed;
-    top: 50px;
+#aside-container {
+    position: absolute;
+    top: 50%;
     left: 50px;
+    transform: translateY(-50%);
+    width: 25rem;
+    height: 40rem;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10rem 30rem;
+    align-items: center;
+}
+
+#aside-container #ammount {
+    font-size: 2.5rem;
+    font-weight: bold;
     text-align: center;
+}
+
+#aside-container #money-container {
+    display: grid;
+    grid-template-columns: 25rem;
+    grid-template-rows: repeat(3, 10rem);
+}
+
+#aside-container #money-container .money {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#aside-container #money-container .money img {
+    width: 20rem;
+    height: 9.5rem;
 }
 
 #machine-container {
@@ -46,45 +80,58 @@
     position: relative;
     width: 80%;
     height: 300px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 33.33%);
     margin: auto;
+}
+
+.box .glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(255, 255, 255, .2);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .box .candy {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #111;
-    width: 75px;
-    height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.75rem;
+    position: relative;
+    width: 20rem;
+    height: 5.75rem;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-areas: "image title"
+                         "image price";
+    margin: 0.25rem 0;
+    padding: 0.25rem;
     cursor: pointer;
-    transition: all 200ms ease-in-out;
 }
 
-.box .candy:nth-of-type(1) {
-    position: absolute;
-    top: 50px;
-    left: 35px;
-    background-color: blue;
-    border-radius: 50%;
+.box .candy img {
+    grid-area: image;
+    height: 90%;
+    align-self: center;
+    padding: 0.35rem;
 }
 
-.box .candy:nth-of-type(2) {
-    position: absolute;
-    top: 50px;
-    right: 35px;
-    background-color: yellow;
-    border-radius: 50%;
+.box .candy .title {
+    grid-area: title;
+    align-self: center;
 }
 
-.box .candy:nth-of-type(3) {
-    position: absolute;
-    top: 150px;
-    left: calc(50% - 35px);
-    background-color: green;
-    border-radius: 50%;
+.box .candy .price {
+    grid-area: price;
+    align-self: center;
+}
+
+.box .candy.selected {
+    font-weight: bold;
 }
 
 .foot {
@@ -115,7 +162,6 @@
     border-radius: 50%;
     background-color: gray;
     cursor: pointer;
-    pointer-events: none;
 }
 
 #button-container .button::after {
@@ -157,51 +203,12 @@
     overflow: hidden;
 }
 
-.money {
-    position: absolute;
-    background-color: blue;
-    cursor: pointer;
-}
-
-.money:nth-of-type(1) {
-    left: 50px;
-    bottom: 50px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: red;
-}
-
-.money:nth-of-type(2) {
-    width: 90px;
-    height: 150px;
-    left: 150px;
-    bottom: 50px;
-    background-color: red;
-}
-
-.money:nth-of-type(3) {
-    width: 100px;
-    height: 175px;
-    left: 300px;
-    bottom: 50px;
-    background-color: red;
-}
-
-.selected {
-    box-shadow: 2px 3px 25px rgba(0, 0, 0, .5);
-}
-
 @keyframes animate-candy {
     0% {
         transform: scale(1);
     }
 
-    33% {
-        transform: scale(1.05);
-    }
-
-    66% {
+    50% {
         transform: scale(0.95);
     }
 
