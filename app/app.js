@@ -98,6 +98,8 @@ triggerCandy = (c) => {
 
 	if (getAmmountTotal() >= candyValue) {
 		counter.innerHTML = 1;
+	} else {
+		counter.innerHTML = 0;
 	}
 };
 
